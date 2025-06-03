@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    const installLink = "https://mooping.short.gy/lfjhBK"; // Replace with your shortened itms-services:// link
+
+    window.onload = () => {
+      const visited = localStorage.getItem("install_redirected");
+
+      if (visited) {
+        // User has already been redirected, so redirect them to mpbox.xyz
+        localStorage.removeItem("install_redirected");
+        window.location.href = "https://mpbox.xyz";
+      } else {
+        // First time visiting, redirect to itms-services link
+        localStorage.setItem("install_redirected", "true");
+        window.location.href = installLink;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting, please wait...</p>
+</body>
+</html>
