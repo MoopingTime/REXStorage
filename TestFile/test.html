@@ -2,26 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecting...</title>
+  <title>Installing App...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #007aff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #005fc0;
+    }
+  </style>
   <script>
-    const installLink = "https://mooping.short.gy/lfjhBK"; // Replace with your shortened itms-services:// link
-
     window.onload = () => {
-      const visited = localStorage.getItem("install_redirected");
-
-      if (visited) {
-        // User has already been redirected, so redirect them to mpbox.xyz
-        localStorage.removeItem("install_redirected");
-        window.location.href = "https://mpbox.xyz";
-      } else {
-        // First time visiting, redirect to itms-services link
-        localStorage.setItem("install_redirected", "true");
-        window.location.href = installLink;
-      }
+      // Delay to allow page to render before redirect
+      setTimeout(() => {
+        window.location.href = "https://mooping.short.gy/lfjhBK";
+      }, 1000);
     };
   </script>
 </head>
 <body>
-  <p>Redirecting, please wait...</p>
+  <h2>Installing App...</h2>
+  <p>You should see an installation popup shortly.</p>
+  <p>Once installation begins or completes, tap the button below to continue.</p>
+
+  <button class="btn" onclick="window.location.href='https://mpbox.xyz'">
+    Continue
+  </button>
 </body>
 </html>
